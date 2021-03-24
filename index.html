@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>标注工具</title>
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="canvas-bg" id="convas-wrap">
+    <div class="left"><canvas id="canvas"></canvas></div>
+    <div class="middle" id="pics6">
+        <ul class="pics4_stage1">
+            <li>
+                <div>自动提取ROI</div>
+                <img class="pics" src="data/2021-03-02 09_48_51_600_Origin.png">
+            </li>
+            <li>
+                <img class="pics" src="data/2021-03-02 09_48_51_600_Canny.png">
+            </li>
+            <li>
+                <img class="pics" src="data/2021-03-02 09_48_51_600_Line.png">
+            </li>
+            <li>
+                <img class="pics" src="data/2021-03-02 09_48_51_600_ROI.png">
+            </li>
+        </ul>
+        <ul class="pics2_stage2">
+            <div>自动预标注(CAE)</div>
+            <li>
+                <img class="pics" src="data/NG_2021-03-02 09_48_51_600_residual.png">
+            </li>
+            <li>
+                <img class="pics" src="data/NG_2021-03-02 09_48_51_600_visual.png">
+            </li>
+        </ul>
+    </div>
+    <div class="right" id="show">
+        <img class="pics" src="data/NG_2021-03-02 09_48_51_600_visual-big.png">
+    </div>
+    <div class="tools">
+        <div class="container">
+            <button class="open"  id="open" title="打开" onchange="selectFile()"></button>
+            <button class="save"  id="save" title="保存"></button>
+            <button class="brush active" id="brush" title="画笔"></button>
+            <button class="eraser" id="eraser" title="橡皮擦"></button>
+            <button class="clear" id="clear" title="清屏"></button>
+            <button class="undo"  id="undo" title="撤销"></button>
+            <button class="redo"  id="redo" title="再做"></button>
+        </div>
+    </div>
+    <div class="pen-detail" id="penDetail">
+        <i class="closeBtn"></i>
+        <p>笔大小</p>
+        <span class="circle-box"><i id="thickness"></i></span> <input type="range" id="range1" min="1" max="10" value="1">
+        <p>笔颜色</p>
+        <ul class="pen-color clearfix">
+            <li class="color-item active" style="background-color: #FF3333;"></li>
+            <li class="color-item" style="background-color: #0066FF;"></li>
+            <li class="color-item" style="background-color: #FFFF33;"></li>
+            <li class="color-item" style="background-color: #FFA500;"></li>
+            <li class="color-item" style="background-color: #99CC00;"></li>
+            <li class="color-item" style="background-color: #33CC66;"></li>
+        </ul>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
